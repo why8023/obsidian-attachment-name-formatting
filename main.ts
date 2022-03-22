@@ -129,7 +129,7 @@ export default class AttachmentNameFormatting extends Plugin {
 					if (attachmentFile instanceof TFile) {
 						// Create the new full name with path
 						let parent_path = attachmentFile.path.substring(0, attachmentFile.path.length - attachmentFile.name.length);
-						let newName = attachmentFile.name.replace(" ", "_");
+						let newName = attachmentFile.name.replace(" ", "_").replace("%20", "_");
 						let fullName = parent_path + newName;
 						// Check wether destination is existed
 						let destinationFile = this.app.vault.getAbstractFileByPath(fullName);
